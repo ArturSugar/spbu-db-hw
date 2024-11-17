@@ -179,7 +179,7 @@ SELECT students.first_name, students.last_name
 FROM students
 JOIN courses c ON c.id = ANY(students.courses_ids)
 WHERE c.name = 'Компьютерное зрение'
-limit 20;
+LIMIT 20;
 
 
 
@@ -187,7 +187,7 @@ limit 20;
 SELECT first_name, last_name
 FROM students
 WHERE group_id = 1
-limit 20;
+LIMIT 20;
 
 -- Получение списка студентов с оценкой отлично (А) по курсу СУБД
 SELECT students.first_name, students.last_name, subd_course.grade
