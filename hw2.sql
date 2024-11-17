@@ -94,7 +94,8 @@ courses  ON sc.course_id = courses.id
 GROUP BY
 students.id, students.first_name, students.last_name
 ORDER BY
-students.last_name, students.first_name;
+students.last_name, students.first_name
+LIMIT 30;
 
 
 -- Вспомогательный запрос, где считаем средний балл
