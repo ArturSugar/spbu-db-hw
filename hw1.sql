@@ -178,18 +178,23 @@ INSERT INTO subd_course (student_id, grade) VALUES
 SELECT students.first_name, students.last_name
 FROM students
 JOIN courses c ON c.id = ANY(students.courses_ids)
-WHERE c.name = 'Компьютерное зрение';
+WHERE c.name = 'Компьютерное зрение'
+limit 20;
+
+
 
 -- Получение списка студентов в группе 1
 SELECT first_name, last_name
 FROM students
-WHERE group_id = 1;
+WHERE group_id = 1
+limit 20;
 
 -- Получение списка студентов с оценкой отлично (А) по курсу СУБД
 SELECT students.first_name, students.last_name, subd_course.grade
 FROM students
 JOIN subd_course ON students.id = subd_course.student_id
-WHERE subd_course.grade_str = 'A';
+WHERE subd_course.grade_str = 'A'
+LIMIT 10;
 
 -- Средний бал за курс по СУБД
 SELECT AVG(subd_course.grade)
